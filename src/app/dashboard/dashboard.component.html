@@ -1,0 +1,78 @@
+<mat-toolbar color="primary">
+  <button
+    type="button"
+    aria-label="Toggle sidenav"
+    mat-icon-button
+    (click)="drawer.toggle()"
+    *ngIf="isHandset$ | async">
+    <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+  </button>
+  <span>Espace Admin</span>
+
+  <span class="example-spacer"></span>
+  <button mat-icon-button >
+    <span class="material-icons">person</span>
+  </button>
+  <span id="sm">ADMIN</span>&nbsp; &nbsp;
+  <button mat-icon-button >
+  <span class="material-icons">settings</span>
+</button>
+  <span id="sm"><a routerLink="updateCpt" id="xx">Modifier le compte</a></span>&nbsp; &nbsp;
+
+ <button mat-icon-button >
+  <span class="material-icons">logout</span>
+
+</button>
+
+ <span id="sm">Quitter</span>
+</mat-toolbar>
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #drawer class="sidenav"
+      [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+      [mode]="(isHandset$ | async) ? 'over' : 'side'"
+      [opened]="(isHandset$ | async) === false">
+
+    <mat-nav-list>
+      <a mat-list-item routerLink="./"  routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true}"><span class="material-icons">home</span>  &nbsp;Home</a>
+
+      <a mat-list-item routerLink="" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true}"><span class="material-icons">school</span>  &nbsp;Fresh Water</a>
+
+
+      <a mat-list-item routerLink="" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true}" ><span class="material-icons">book</span>  &nbsp;Climate change</a>
+      <!--
+      <mat-menu #menu="matMenu" >
+        <a mat-menu-item routerLink="listModules" id="a"  routerLinkActive="active"  [routerLinkActiveOptions]="{ exact: true}"> Gestion des modules</a>
+        <a mat-menu-item routerLink="listMatieres" id="a"  routerLinkActive="active"  [routerLinkActiveOptions]="{ exact: true}"> Gestion des matières</a>
+        <a mat-menu-item routerLink="affectMatMod" id="a"  routerLinkActive="active"  [routerLinkActiveOptions]="{ exact: true}"> Affecter une matière à un module</a>
+        <a mat-menu-item routerLink="affectCM" id="a"  routerLinkActive="active"  [routerLinkActiveOptions]="{ exact: true}"> Affecter un module à une classe</a>
+      </mat-menu>
+ -->
+      <a mat-list-item  [matMenuTriggerFor]="menuu"><span class="material-icons">work</span>  &nbsp;Gestion de l'enseignement</a>
+      <!-- #enddocregion mat-menu-trigger-for -->
+      <mat-menu #menuu="matMenu" >
+
+        <a mat-menu-item routerLink="affectTC" id="a" routerLinkActive="active"  [routerLinkActiveOptions]="{ exact: true}"> Affecter un enseignant à une classe</a>
+        <a mat-menu-item routerLink="affectTM" id="a" routerLinkActive="active"  [routerLinkActiveOptions]="{ exact: true}"> Affecter une enseignant à une matière</a>
+        <a mat-menu-item routerLink="affectRes" id="a" routerLinkActive="active"  [routerLinkActiveOptions]="{ exact: true}"> Affecter un résultat à un étudiant </a>
+      </mat-menu>
+
+      <a mat-list-item routerLink="" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true}"><span class="material-icons">group</span>  &nbsp;Famine</a>
+      <a mat-list-item routerLink="" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true}"><span class="material-icons">group</span>  &nbsp;Resilience</a>
+      <a mat-list-item routerLink="" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true}"><span class="material-icons">sms_failed</span>  &nbsp;Prediction</a>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+
+
+<div id="div">
+  <router-outlet></router-outlet>
+
+</div>
+
+
+  </mat-sidenav-content>
+
+</mat-sidenav-container>
+
+
+
