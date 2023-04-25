@@ -30,6 +30,9 @@ import { LayoutModule } from '@angular/cdk/layout';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms'; // Import the FormsModule
+
 
 @NgModule({
   declarations: [
@@ -38,11 +41,11 @@ import { MatListModule } from '@angular/material/list';
      DashboardComponent
   ],
   imports: [
-    BrowserModule,RouterModule,
+    BrowserModule,RouterModule,HttpClientModule,
     AppRoutingModule,
     MdbAccordionModule,
     MdbCarouselModule,
-    MdbCheckboxModule,
+    MdbCheckboxModule,FormsModule,
     MdbCollapseModule,
     MdbDropdownModule,
     MdbFormsModule,
