@@ -10,7 +10,7 @@ export class PredictionComponent implements OnInit {
   selectedCountry: string;
   date: number;
   countries: string[] = []; // Example list of countries
-
+  selectedOption:string;
   constructor(private flask: FlaskService) {}
 
   ngOnInit(): void {

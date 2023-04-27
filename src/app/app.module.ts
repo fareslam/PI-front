@@ -33,6 +33,7 @@ import { MatListModule } from '@angular/material/list';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { PredictionComponent } from './dashboard/prediction/prediction.component';
+import { FooterComponent } from './footer/footer.component';
 
 
 @NgModule({
@@ -40,7 +41,8 @@ import { PredictionComponent } from './dashboard/prediction/prediction.component
     AppComponent,
      HomeComponent,
      DashboardComponent,
-     PredictionComponent
+     PredictionComponent,
+     FooterComponent
   ],
   imports: [
     BrowserModule,RouterModule,HttpClientModule,
