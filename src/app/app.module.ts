@@ -31,14 +31,16 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
 import { HttpClientModule } from '@angular/common/http';
-import { FormsModule } from '@angular/forms'; // Import the FormsModule
+import { FormsModule } from '@angular/forms';
+import { PredictionComponent } from './dashboard/prediction/prediction.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
      HomeComponent,
-     DashboardComponent
+     DashboardComponent,
+     PredictionComponent
   ],
   imports: [
     BrowserModule,RouterModule,HttpClientModule,
