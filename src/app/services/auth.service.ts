@@ -15,6 +15,9 @@ export class AuthService {
   signup(user:any):Observable<any>
   {return this.http.post(`${this.apiUrl}/signup`,user);}
 
+  update(username: string,user:any):Observable<any>
+  {return this.http.put(`${this.apiUrl}/update/${username}`,user);}
+
   login(user: any): Observable<any> {
     return this.http.post(`${this.apiUrl}/login`, user);
   }

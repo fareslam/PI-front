@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { FlaskService } from 'src/app/services/flask.service';
 
 @Component({
@@ -11,9 +12,21 @@ export class PredictionComponent implements OnInit {
   date: number;
   countries: string[] = []; // Example list of countries
   selectedOption:string;
-  constructor(private flask: FlaskService) {}
+  constructor(private router:Router,private flask: FlaskService) {}
 
   ngOnInit(): void {
+
+    if ((localStorage.getItem('user')==null) )
+    {
+
+      alert(' FORBIDDEN ACCESS  !!');
+      this.router.navigate(['/']);
+
+   }
+
+
+
+
     this.ListCountries();
   }
 

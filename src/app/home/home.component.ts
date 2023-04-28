@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { AuthService } from '../services/auth.service';
 import { OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import {   Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -37,7 +37,7 @@ export class HomeComponent implements OnInit {
 
             const stockage = JSON.stringify(this.userByUsername);
             localStorage.setItem('user', stockage);
-            this.router.navigate(['d/prediction']);
+            window.location.href = 'http://localhost:4200/d';
 
           },
           (err) => {
@@ -67,6 +67,7 @@ export class HomeComponent implements OnInit {
       username: this.username2,
       password: this.password2,
     };
+
     this.authService.signup(user2).subscribe(
       (data) => {
         console.log(data);
@@ -78,5 +79,7 @@ export class HomeComponent implements OnInit {
         console.log(err);
       }
     );
+
+
   }
 }
