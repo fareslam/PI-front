@@ -1,0 +1,20 @@
+li a{color:white;text-decoration: none;}
+a:hover{color:white;text-decoration: none;}
+a{color:white;text-decoration: none;}
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #f5f5f5;
+  color: #333;
+  text-align: center;
+  padding: 10px;
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.2);
+}
+
+@media screen and (max-width: 767px) {
+  .footer {
+    position: static;
+  }
+}

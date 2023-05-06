@@ -1,0 +1,25 @@
+@media (max-width: 599px) {
+    .mat-toolbar-row {
+      flex-wrap: wrap;
+    }
+    .mat-toolbar-spacer {
+      display: none;
+    }
+    .mat-toolbar .mat-button-wrapper {
+      padding: 0;
+    }
+     
+  }
+  
+  @media (min-width: 600px) {
+    .sidenav {
+      display: none;
+    }
+  }
+img{
+     background-size: contain;
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+  }
+  a:hover{color: antiquewhite;text-decoration: none;}

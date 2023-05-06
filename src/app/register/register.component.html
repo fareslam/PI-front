@@ -1,0 +1,74 @@
+<app-header></app-header>
+<br>
+<div class="main-content">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-8 offset-md-2">
+          <mat-card>
+            <mat-card-header>
+                
+                <h2 class="title">Register form</h2>
+            </mat-card-header>
+            <mat-card-content>
+              
+                <div class="row">
+                  <div class="col-md-6">
+                    <mat-form-field>
+                      <mat-label>Identity</mat-label>
+                      <input matInput     [(ngModel)]="cin"
+                      name="cin">
+                    </mat-form-field>
+                    <mat-form-field>
+                      <mat-label>Username</mat-label>
+                      <input matInput [(ngModel)]="username"
+                      name="username">
+                    </mat-form-field>
+
+                    <mat-form-field>
+                      <mat-label>Password</mat-label>
+                      <input matInput type="password" [(ngModel)]="password"
+                      name="password">
+                    </mat-form-field>
+
+                    <mat-form-field>
+                      <mat-label>Confirm Password</mat-label>
+                      <input matInput type="password" formControlName="confirmPassword">
+                    </mat-form-field>
+
+                  </div>
+                  <div class="col-md-6">
+                    <mat-form-field>
+                      <mat-label>Date of Birth</mat-label>
+                      <input matInput type="date"    [(ngModel)]="bd"
+                      name="bd">
+                    </mat-form-field>
+                    <mat-form-field>
+                      <mat-label>Email</mat-label>
+                      <input matInput type="email"    [(ngModel)]="email"
+                      name="email">
+                    </mat-form-field>
+                    <mat-form-field>
+                      <mat-label>Name</mat-label>
+                      <input matInput     [(ngModel)]="nom"
+                      name="nom">
+                    </mat-form-field>
+                    <mat-form-field>
+                      <mat-label>Surname</mat-label>
+                      <input matInput   type="text"   [(ngModel)]="surname"
+                      name="surname">
+                    </mat-form-field>
+                    <mat-form-field>
+                      <mat-label>Telephone</mat-label>
+                      <input matInput  [(ngModel)]="tel"  type="number"
+                      name="tel" >
+                    </mat-form-field>
+                  </div>
+                </div>
+                <button mat-raised-button color="primary" type="submit" (click)="register()">Submit</button>
+             </mat-card-content>
+          </mat-card>
+        </div>
+      </div>
+    </div>
+  </div>
+  
