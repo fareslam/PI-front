@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { AuthService } from '../services/auth.service';
 import { OnInit } from '@angular/core';
 import {   Router } from '@angular/router';
-
+import Swal from 'sweetalert2';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -12,7 +12,7 @@ export class LoginComponent implements OnInit {
   username: string;
   password: string;
   userByUsername:any;
-  constructor(private authService: AuthService,  private router: Router)
+  constructor(private authService: AuthService,  private router: Router )
   {
   
   }
@@ -52,7 +52,18 @@ login()
     },
 
     (err) => {
-      alert("Login failed !")
+
+
+      Swal.fire({
+        title: 'Login failed!',
+        text: 'You should try again',
+        icon: 'error',
+        confirmButtonColor: '#3085d6',
+        confirmButtonText: 'OK'
+      });
+
+
+     // alert("Login failed !")
       console.log(err);
     }
   );

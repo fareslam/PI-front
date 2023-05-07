@@ -12,29 +12,29 @@
                           <div class="row">
                               <div class="col-md-5">
                                 <mat-form-field class="example-full-width">
-                                    <input matInput placeholder="Identity" type="text" [(ngModel)]="user.cin" name="cin">
+                                    <input matInput placeholder="Identity" type="text" [(ngModel)]="user.cin" name="cin" required>
                                   </mat-form-field>
                               </div>
                               <div class="col-md-3">
                                   <mat-form-field class="example-full-width">
-                                    <input type="text"  matInput placeholder="Username" [(ngModel)]="user.username" name="username">
+                                    <input type="text"  matInput placeholder="Username" [(ngModel)]="user.username" name="username" required>
                                   </mat-form-field>
                               </div>
                               <div class="col-md-4">
                                   <mat-form-field class="example-full-width">
-                                    <input matInput placeholder="Email address" type="email" [(ngModel)]="user.email" name="email">
+                                    <input matInput placeholder="Email address" type="email" [(ngModel)]="user.email" name="email" required>
                                   </mat-form-field>
                               </div>
                           </div>
                           <div class="row">
                               <div class="col-md-6">
                                 <mat-form-field class="example-full-width">
-                                  <input matInput placeholder="Fist Name" type="text" [(ngModel)]="user.name" name="name">
+                                  <input matInput placeholder="Fist Name" type="text" [(ngModel)]="user.name" name="name" required>
                                 </mat-form-field>
                               </div>
                               <div class="col-md-6">
                                 <mat-form-field class="example-full-width">
-                                  <input matInput placeholder="Last Name" type="text"  [(ngModel)]="user.surname" name="surname">
+                                  <input matInput placeholder="Last Name" type="text"  [(ngModel)]="user.surname" name="surname" required>
                                 </mat-form-field>
                               </div>
                           </div>
@@ -42,17 +42,17 @@
                           <div class="row">
                               <div class="col-md-4">
                                 <mat-form-field class="example-full-width">
-                                  <input matInput placeholder="Password" type="password"  [(ngModel)]="user.password" name="password">
+                                  <input matInput placeholder="Password" type="password"  [(ngModel)]="user.password" name="password" required>
                                 </mat-form-field>
                               </div>
                               <div class="col-md-4">
                                 <mat-form-field class="example-full-width">
-                                  <input matInput placeholder="Date of birth" type="date" [(ngModel)]="user.dateBirth" name="dateBirth">
+                                  <input matInput placeholder="Date of birth" type="date" [(ngModel)]="user.dateBirth" name="dateBirth" required>
                                 </mat-form-field>
                               </div>
                               <div class="col-md-4">
                                 <mat-form-field class="example-full-width">
-                                  <input matInput placeholder="Telephone" type="number" [(ngModel)]="user.tel" name="tel">
+                                  <input matInput placeholder="Telephone" type="number" [(ngModel)]="user.tel" name="tel" required>
                                 </mat-form-field>
                               </div>
                           </div>

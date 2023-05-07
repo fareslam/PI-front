@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from '../services/auth.service';
+import Swal from 'sweetalert2';
+
 @Component({
   selector: 'app-user-profile',
   templateUrl: './user-profile.component.html',
@@ -51,7 +53,7 @@ surname: string;
     };
 
     console.log(updatedUser);
-    if (window.confirm("Do you want to delete this item?")) {
+    if (window.confirm("Sure for update?")) {
 
     this.authesrvice.update(this.user.username, updatedUser).subscribe(
       (data) => {
@@ -64,7 +66,13 @@ surname: string;
             const stockage = JSON.stringify(this.userByUsername);
             localStorage.setItem('user', stockage);
 
-            alert('update successfull ');
+            Swal.fire({
+              title:'Update successful ! ',  
+    
+              icon: 'success',
+              confirmButtonColor: '#3085d6',
+              confirmButtonText: 'OK'
+            });
           },
           (err) => {
             console.log(err);
@@ -73,7 +81,13 @@ surname: string;
       },
 
       (err) => {
-        alert('update failed ');
+        Swal.fire({
+          title:'Update failed !  ',  
+          text:'Try again .',
+          icon: 'error',
+          confirmButtonColor: '#3085d6',
+          confirmButtonText: 'OK'
+        });
       
 
         console.log(err);

@@ -7,8 +7,8 @@ import { Observable } from 'rxjs';
 
 
 export class AuthService {
-  private apiUrl = 'http://192.168.77.78:9912/api/user';
-
+  //private apiUrl = 'http://192.168.77.78:9912/api/user';
+  private apiUrl = 'http://localhost:9912/api/user';
   constructor(private http: HttpClient) { }
 
   signup(user:any):Observable<any>

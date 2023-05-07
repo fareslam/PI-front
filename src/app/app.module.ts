@@ -32,17 +32,23 @@ import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { MatCardModule } from '@angular/material/card';
 import { BrowserModule } from '@angular/platform-browser';
+import { PowerBIEmbedModule } from 'powerbi-client-angular';
+import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
+import Swal from 'sweetalert2';
+
+  
 @NgModule({
   imports: [
     BrowserAnimationsModule,
     FormsModule,
     ReactiveFormsModule,BrowserModule,
-    HttpClientModule,MatSlideToggleModule,
+    HttpClientModule,MatSlideToggleModule,SweetAlert2Module,
     ComponentsModule,
     RouterModule,
     AppRoutingModule,MatFormFieldModule,MatSelectModule,MatInputModule,MatButtonModule,MatToolbarModule,
     MatIconModule,MatSidenavModule,
-    MatButtonModule,MatCardModule
+    MatButtonModule,MatCardModule,
+    PowerBIEmbedModule
 
   ],
   declarations: [

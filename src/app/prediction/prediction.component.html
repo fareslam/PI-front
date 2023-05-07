@@ -1,13 +1,13 @@
-<br>   <br>   <br><div class="form-group" style="width: 50%; margin: 0 auto;">
+<br>  <br>  <br> <br>   <br><div class="form-group" style="width: 50%; margin: 0 auto;"><br>  <br> 
     <h3 class="text-center">Select Sector for prediction:</h3>
  
-    <mat-form-field>
+    <mat-form-field >
         <mat-label>Select an option</mat-label>
         <mat-select [(ngModel)]="selectedOption" name="selectedOption" id="optionSelect">
-          <mat-option value="fresh-water">Fresh water</mat-option>
           <mat-option value="co2-emission">CO2 emission</mat-option>
-          <mat-option value="resilience">Resilience</mat-option>
-          <mat-option value="famine">Famine</mat-option>
+          <mat-option value="fresh-water">Fresh water</mat-option>
+          <mat-option value="Poverty">Poverty</mat-option>
+          <mat-option value="Hunger">Hunger</mat-option>
         </mat-select>
       </mat-form-field>
   
@@ -33,22 +33,49 @@
         </mat-form-field>
       </div>
       <br>
-      <div style="width: 50%; margin: 0 auto;">
+      <div style="width: 50%; margin: 0 auto;" *ngIf="selectedCountry!=''&& selectedCountry!=undefined && selectedCountry!=null">
       
         <button mat-raised-button color="warn" (click)="submitForm()">Predict</button>
            </div>
     </form>
   </div>
-  
-  
+   
+
   <div *ngIf="selectedOption=='fresh-water'" style="width: 50%; margin: 0 auto;">
     <h3 class="text-center">Fresh water prediction </h3>
     <form>
       <div class="form-group" style="width: 50%; margin: 0 auto;">
         <mat-form-field appearance="fill">
           <mat-label>Select Country:</mat-label>
+          <mat-select [(ngModel)]="selectedCountry" name="country" required>
+            <mat-option *ngFor="let country of countries2" [value]="country">{{ country }}</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <div class="form-group" style="width: 50%; margin: 0 auto;">
+        <mat-form-field appearance="fill">
+          <mat-label>Target Date:</mat-label>
+          <input matInput type="number" [(ngModel)]="date" name="date" min="2023" required>
+        </mat-form-field>
+      </div>
+      <br>
+      <div style="width: 50%; margin: 0 auto;"  *ngIf="selectedCountry!=''&& selectedCountry!=undefined && selectedCountry!=null">
+      
+        <button mat-raised-button color="warn" (click)="submitForm1()">Predict</button>
+           </div>
+    </form>
+  </div>
+   
+
+
+  <div *ngIf="selectedOption=='Poverty'" style="width: 50%; margin: 0 auto;">
+    <h3 class="text-center">Poverty prediction </h3>
+    <form>
+      <div class="form-group" style="width: 50%; margin: 0 auto;">
+        <mat-form-field appearance="fill">
+          <mat-label>Select Country:</mat-label>
           <mat-select [(ngModel)]="selectedCountry" name="country">
-            <mat-option *ngFor="let country of countries" [value]="country">{{ country }}</mat-option>
+            <mat-option *ngFor="let country of countries2" [value]="country">{{ country }}</mat-option>
           </mat-select>
         </mat-form-field>
       </div>
@@ -59,11 +86,38 @@
         </mat-form-field>
       </div>
       <br>
-      <div style="width: 50%; margin: 0 auto;">
+      <div style="width: 50%; margin: 0 auto;" *ngIf="selectedCountry!=''&& selectedCountry!=undefined && selectedCountry!=null">
       
-        <button mat-raised-button color="warn" (click)="submitForm()">Predict</button>
+        <button mat-raised-button color="warn" (click)="submitForm2()">Predict</button>
            </div>
     </form>
   </div>
-  
-  
+   
+
+
+
+  <div *ngIf="selectedOption=='Hunger'" style="width: 50%; margin: 0 auto;">
+    <h3 class="text-center">Hunger prediction </h3>
+    <form>
+      <div class="form-group" style="width: 50%; margin: 0 auto;">
+        <mat-form-field appearance="fill">
+          <mat-label>Select Country:</mat-label>
+          <mat-select [(ngModel)]="selectedCountry" name="country">
+            <mat-option *ngFor="let country of countries2" [value]="country">{{ country }}</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <div class="form-group" style="width: 50%; margin: 0 auto;">
+        <mat-form-field appearance="fill">
+          <mat-label>Target Date:</mat-label>
+          <input matInput type="number" [(ngModel)]="date" name="date" min="2023">
+        </mat-form-field>
+      </div>
+      <br>
+      <div style="width: 50%; margin: 0 auto;" *ngIf="selectedCountry!=''&& selectedCountry!=undefined && selectedCountry!=null">
+      
+        <button mat-raised-button color="warn" (click)="submitForm3()">Predict</button>
+           </div>
+    </form>
+  </div>
+   

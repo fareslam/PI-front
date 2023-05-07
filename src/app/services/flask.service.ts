@@ -7,8 +7,8 @@ import { catchError } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class FlaskService {
-  private path = 'http://192.168.77.78:5000/';
-
+  //private path = 'http://192.168.77.78:5000/';
+  private path = 'http://localhost:5000/';
   constructor(private http: HttpClient) { }
 
   predict(data:any):Observable<any>
@@ -22,4 +22,26 @@ export class FlaskService {
       })
     );
   }
+  getCountries2(): Observable<string[]> {
+    return this.http.get<string[]>(`${this.path}/distinct_countries_nex`).pipe(
+      catchError((error) => {
+        console.error(error);
+        return throwError(() => new Error('error while fetching data from flask mr flam'));
+      })
+    );
+  }
+  predictfreshwater(data:any):Observable<any>
+  {return this.http.post(`${this.path}/predict_water`,data);
+} 
+getcounty():Observable<any>
+{return this.http.get<string[]>(`${this.path}/distinct_countries_nex`);
+} 
+predectionpoverty(data:any):Observable<any>
+{return this.http.post(`${this.path}/predictpoverty`,data);
+} 
+predectionhunger(data:any):Observable<any>
+{return this.http.post(`${this.path}/predict_hunger`,data);
+} 
 }
+
+ 
