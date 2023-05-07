@@ -1,5 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { AuthService } from "../services/auth.service";
+import Swal from 'sweetalert2';
+
 @Component({
   selector: "app-register",
   templateUrl: "./register.component.html",
@@ -37,12 +39,23 @@ export class RegisterComponent implements OnInit {
     this.authService.signup(user2).subscribe(
       (data) => {
         console.log(data);
-
+        Swal.fire({
+          title: 'Registration done!',
+          icon: 'success',
+          confirmButtonColor: '#3085d6',
+          confirmButtonText: 'OK'
+        });
         user2 = {};
       },
 
       (err) => {
-        alert(err.error.message)
+        Swal.fire({
+          title: 'Registration failed!',
+          text: 'You should try again',
+          icon: 'error',
+          confirmButtonColor: '#3085d6',
+          confirmButtonText: 'OK'
+        });
         console.log(err);
       }
     );
