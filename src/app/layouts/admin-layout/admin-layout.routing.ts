@@ -18,6 +18,7 @@ import { PredictionComponent } from "app/prediction/prediction.component";
 import { HomeComponent } from "app/home/home.component";
 import { SdgsComponent } from "app/sdgs/sdgs.component";
 import { UserGuardService } from "app/services/user-guard.service";
+import { RecComponent } from "app/rec/rec.component";
 
 export const AdminLayoutRoutes: Routes = [
   { path: "", redirectTo: "/dashboard/home", pathMatch: "full" },
@@ -67,5 +68,7 @@ export const AdminLayoutRoutes: Routes = [
   { path: "home", component: HomeComponent, canActivate: [UserGuardService] },
   { path: "sdgs", component: SdgsComponent, canActivate: [UserGuardService] },
 
-  { path: "prediction", component: PredictionComponent },
+  { path: "prediction", component: PredictionComponent, canActivate: [UserGuardService] },
+  { path: "rec", component: RecComponent, canActivate: [UserGuardService] },
+
 ];

@@ -159,7 +159,7 @@ export class PredictionComponent implements OnInit {
       
         Swal.fire({
           title:'Predicted Hunger for '+this.selectedCountry+' in '+this.date+'  : ',  
-          text: '~'+data['prediction'] +'m³ ',
+          text: '~'+data['prediction'] ,
           icon: 'success',
           confirmButtonColor: '#3085d6',
           confirmButtonText: 'OK'
