@@ -16,7 +16,7 @@ export class FlaskService {
   }
 
   getCountries(): Observable<string[]> {
-    return this.http.get<string[]>(`${this.path}/distinct_countries`).pipe(
+    return this.http.get<string[]>(`${this.path}distinct_countries`).pipe(
       catchError((error) => {
         console.error(error);
         return throwError(

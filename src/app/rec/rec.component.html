@@ -1,1 +1,38 @@
-<p>rec works!</p>
+<br><br><br><br>
+ <br><br><br>
+<div   class="form-group" style="width: 50%; margin: 0 auto; text-align: center;">
+    <h3 class="text-center">CO2 emissions recommendations</h3>
+    <form><br> 
+      <div class="form-group" style="width: 50%; margin: 0 auto;">
+        <mat-form-field appearance="fill">
+          <mat-label>Select Country:</mat-label>
+          <mat-select [(ngModel)]="selectedCountry" name="country">
+            <mat-option *ngFor="let country of countries" [value]="country">{{ country }}</mat-option>
+ 
+          </mat-select>
+        </mat-form-field>
+      </div>
+       
+      <br>
+      <div style="width: 50%; margin: 0 auto;" *ngIf="selectedCountry!=''&& selectedCountry!=undefined && selectedCountry!=null">
+      
+        <button mat-raised-button color="warn" (click)="submitForm()">View Recommendation</button>
+           </div>
+    </form>
+    <br>
+    <div *ngIf="ok==true" class="form-group flex-column" style="width: 100%; height: 80%; margin: 0 auto;">  
+    <h2><span class="badge badge-secondary">Recommendations :</span></h2>
+    
+      <div class="alert alert-secondary" role="alert">
+
+        <hr>
+        <p> {{response}}</p>
+        <hr>
+        <p class="mb-0"></p>
+      </div>
+      <br>
+      <img [src]="url" class="responsive-image  " style="max-width: 150%; height: 100%; display: block; margin: 0 auto;"/>
+      <br>
+    </div>
+    
+</div>
