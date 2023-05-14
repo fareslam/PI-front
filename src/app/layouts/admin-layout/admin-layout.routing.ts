@@ -19,6 +19,7 @@ import { HomeComponent } from "app/home/home.component";
 import { SdgsComponent } from "app/sdgs/sdgs.component";
 import { UserGuardService } from "app/services/user-guard.service";
 import { RecComponent } from "app/rec/rec.component";
+import { HealthComponent } from "app/health/health.component";
 
 export const AdminLayoutRoutes: Routes = [
   { path: "", redirectTo: "/dashboard/home", pathMatch: "full" },
@@ -63,6 +64,11 @@ export const AdminLayoutRoutes: Routes = [
   {
     path: "emissions",
     component: EmissionsComponent,
+    canActivate: [UserGuardService],
+  }, 
+   {
+    path: "health",
+    component: HealthComponent,
     canActivate: [UserGuardService],
   },
   { path: "home", component: HomeComponent, canActivate: [UserGuardService] },

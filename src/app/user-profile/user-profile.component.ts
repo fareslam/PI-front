@@ -20,26 +20,36 @@ dateBirth: Date;
 email: string;
 nom: string;
 surname: string;
+savedPwd:string;
   constructor(private router: Router,private authesrvice: AuthService) { }
 
   ngOnInit() {
-
+  
     const userString = localStorage.getItem('user');
+
     if (userString !== null) {
       this.userL = JSON.parse(userString);
     }
+  
     this.authesrvice.getUser(this.userL.username).subscribe(
       data => {
         this.user=data;
+        this.savedPwd=this.user['password'];
+        console.log(this.savedPwd)
+        this.user.password=''
 
           console.log(this.user)
       },
 
       err => console.log(err)); 
+
+
+  
   }
 
 
   updateUser() {
+    
     let updatedUser: any = {
       cin: this.user.cin,
 
@@ -52,13 +62,26 @@ surname: string;
       tel: this.user.tel,
     };
 
+ 
+
+
+
+
     console.log(updatedUser);
     if (window.confirm("Sure for update?")) {
+
+    
+      
 
     this.authesrvice.update(this.user.username, updatedUser).subscribe(
       (data) => {
         console.log(data);
         localStorage.clear();
+
+        if (this.user.password==null ||this.user.password==undefined)
+    {
+      this.user.password=this.savedPwd;
+    }
         this.authesrvice.getUser(this.user.username).subscribe(
           (data) => {
             this.userByUsername = data;

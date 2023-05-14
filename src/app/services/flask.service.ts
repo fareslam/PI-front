@@ -7,7 +7,7 @@ import { catchError } from "rxjs/operators";
   providedIn: "root",
 })
 export class FlaskService {
-  private path = "http://192.168.77.78:5000/";
+ private path = "http://192.168.77.78:5000/";
   // private path = 'http://localhost:5000/';
   constructor(private http: HttpClient) {}
 

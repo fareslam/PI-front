@@ -75,7 +75,7 @@ export class PredictionComponent implements OnInit {
         Swal.fire({
           title: 'Predicted CO2 emission for '+this.selectedCountry+' in '+this.date+'  : ',           
           icon: 'success',
-          text:'~'+data['predicted_emissions']+' metric tons',
+          text:'~ '+data['predicted_emissions']+' metric tons',
           confirmButtonText: 'OK'
         });
 
@@ -105,7 +105,7 @@ export class PredictionComponent implements OnInit {
       
         Swal.fire({
           title:'Predicted Fresh water for '+this.selectedCountry+' in '+this.date+'  : ',  
-          text: '~'+data['prediction'] +'m³ ',
+          text: '~'+data['prediction'] +' m³ ',
           icon: 'success',
           confirmButtonColor: '#3085d6',
           confirmButtonText: 'OK'
@@ -132,7 +132,7 @@ export class PredictionComponent implements OnInit {
       
         Swal.fire({
           title:'Predicted Poverty for '+this.selectedCountry+' in '+this.date+'  : ',  
-          text: '~'+data['prediction'] ,
+          text: '~'+data['prediction'] +' % ',
           icon: 'success',
           confirmButtonColor: '#3085d6',
           confirmButtonText: 'OK'
@@ -159,7 +159,7 @@ export class PredictionComponent implements OnInit {
       
         Swal.fire({
           title:'Predicted Hunger for '+this.selectedCountry+' in '+this.date+'  : ',  
-          text: '~'+data['prediction'] ,
+          text: '~'+data['prediction'] +' % ',
           icon: 'success',
           confirmButtonColor: '#3085d6',
           confirmButtonText: 'OK'
